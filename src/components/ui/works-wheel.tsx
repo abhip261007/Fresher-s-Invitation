@@ -377,11 +377,11 @@ export function WorksWheel({
       </div>
 
       <ol
-        className="text-muted-foreground absolute top-[7.5%] right-[2.5%] text-right leading-[1.75]"
+        className="text-muted-foreground absolute top-[7.5%] right-[2.5%] text-right leading-[1.75] max-h-[85%] overflow-y-auto pr-1 pointer-events-auto select-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         style={{ fontSize: metrics.index }}
       >
         {items.map((item, i) => (
-          <li key={item.title}>
+          <li key={`${item.title}-${i}`}>
             <button
               type="button"
               onClick={() => to(i + 1)}
