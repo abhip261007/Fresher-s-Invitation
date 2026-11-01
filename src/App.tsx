@@ -143,9 +143,9 @@ export function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [registeredUser, setRegisteredUser] = useState<string>("");
 
-  // Countdown to 19 November 2026, 2:00 PM
+  // Countdown to 19 November 2026, 1:30 PM
   const calculateTimeLeft = () => {
-    const targetDate = new Date(2026, 10, 19, 14, 0, 0).getTime();
+    const targetDate = new Date(2026, 10, 19, 13, 30, 0).getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -393,19 +393,19 @@ export function App() {
                   <div className="flex flex-col items-center justify-center border-b border-white/10 pb-5 sm:border-b-0 sm:border-r sm:pb-0 text-center">
                     <Calendar className="h-6 w-6 text-[#38BDF8] mb-2 drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]" strokeWidth={2} />
                     <div className="text-[11px] uppercase tracking-[0.25em] font-extrabold text-[#38BDF8] text-center">Date</div>
-                    <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">Saturday, Nov 14, 2026</div>
+                    <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">19 November 2026</div>
                   </div>
 
                   <div className="flex flex-col items-center justify-center border-b border-white/10 pb-5 sm:border-b-0 sm:border-r sm:pb-0 text-center">
                     <Clock className="h-6 w-6 text-[#38BDF8] mb-2 drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]" strokeWidth={2} />
                     <div className="text-[11px] uppercase tracking-[0.25em] font-extrabold text-[#38BDF8] text-center">Time</div>
-                    <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">Doors Open 6:00 PM</div>
+                    <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">1:30 PM</div>
                   </div>
 
                   <div className="flex flex-col items-center justify-center text-center">
                     <MapPin className="h-6 w-6 text-[#38BDF8] mb-2 drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]" strokeWidth={2} />
                     <div className="text-[11px] uppercase tracking-[0.25em] font-extrabold text-[#38BDF8] text-center">Venue</div>
-                    <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">CAIT Central Amphitheatre</div>
+                    <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">CAIT Seminar Hall</div>
                   </div>
 
                 </div>
@@ -468,7 +468,7 @@ export function App() {
                 {/* Centered Countdown Timer with Theme Gradient */}
                 <div className="rounded-3xl border border-[#1A43BF]/25 bg-gradient-to-r from-[#00072D] via-[#051650] to-[#1A43BF] p-8 sm:p-10 text-white shadow-2xl text-center">
                   <span className="text-[11px] uppercase tracking-[0.3em] text-[#38BDF8] font-bold text-center">
-                    Countdown to Saarthi 2026 • 19 November 2026, 2:00 PM
+                    Countdown to Saarthi 2026 • 19 November 2026, 1:30 PM
                   </span>
                   <div className="mt-6 grid grid-cols-4 gap-3 sm:gap-4 max-w-md mx-auto text-center">
                     <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-md flex flex-col items-center justify-center text-center">
@@ -823,13 +823,13 @@ export function App() {
                 <div className="flex flex-col items-center justify-center border-b border-white/10 pb-5 sm:border-b-0 sm:border-r sm:pb-0 text-center">
                   <Calendar className="h-6 w-6 text-[#38BDF8] mb-2 drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]" strokeWidth={2} />
                   <div className="text-[11px] uppercase tracking-[0.25em] font-extrabold text-[#38BDF8] text-center">Date & Time</div>
-                  <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">Saturday, Nov 14, 2026 • 6:00 PM</div>
+                  <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">19 November 2026 • 1:30 PM</div>
                 </div>
 
                 <div className="flex flex-col items-center justify-center text-center">
                   <MapPin className="h-6 w-6 text-[#38BDF8] mb-2 drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]" strokeWidth={2} />
                   <div className="text-[11px] uppercase tracking-[0.25em] font-extrabold text-[#38BDF8] text-center">Venue</div>
-                  <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">CAIT Central Amphitheatre & Campus Lawns</div>
+                  <div className="text-base font-extrabold text-white mt-1.5 text-center drop-shadow-sm">CAIT Seminar Hall</div>
                 </div>
 
               </div>
