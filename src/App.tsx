@@ -142,18 +142,29 @@ export function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [registeredUser, setRegisteredUser] = useState<string>("");
 
-  // Countdown State
-  const [timeLeft, setTimeLeft] = useState({ days: 18, hours: 6, minutes: 42, seconds: 15 });
+  // Countdown to 19 November 2026, 2:00 PM
+  const calculateTimeLeft = () => {
+    const targetDate = new Date(2026, 10, 19, 14, 0, 0).getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
-        if (prev.minutes > 0) return { ...prev, minutes: 59, seconds: 59 };
-        if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        if (prev.days > 0) return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        return prev;
-      });
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
     return () => clearInterval(timer);
   }, []);
@@ -450,7 +461,7 @@ export function App() {
                 {/* Centered Countdown Timer with Theme Gradient */}
                 <div className="rounded-3xl border border-[#1A43BF]/25 bg-gradient-to-r from-[#00072D] via-[#051650] to-[#1A43BF] p-8 sm:p-10 text-white shadow-2xl text-center">
                   <span className="text-[11px] uppercase tracking-[0.3em] text-[#38BDF8] font-bold text-center">
-                    Countdown to Saarthi 2026
+                    Countdown to Saarthi 2026 • 19 November 2026, 2:00 PM
                   </span>
                   <div className="mt-6 grid grid-cols-4 gap-3 sm:gap-4 max-w-md mx-auto text-center">
                     <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-md flex flex-col items-center justify-center text-center">
