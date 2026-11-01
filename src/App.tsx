@@ -22,20 +22,6 @@ import { PosterReveal } from "@/components/PosterReveal";
 // Memory Slides for the Glide.js Center-Focus Peeking Carousel (Curated Freshers Photos - No Captions)
 const MEMORY_SLIDES: GlideSlideItem[] = [
   {
-    id: 1,
-    src: "assets/freshers/photo-01.jpeg",
-    alt: "CAIT freshers induction and celebration moments",
-    title: "The Induction Rite",
-    tag: "Batch Welcome"
-  },
-  {
-    id: 2,
-    src: "assets/freshers/photo-02.jpeg",
-    alt: "Celebration and festive vibes",
-    title: "Festive Aura",
-    tag: "Celebration"
-  },
-  {
     id: 3,
     src: "assets/freshers/photo-03.jpeg",
     alt: "Group smiles and friendship",
