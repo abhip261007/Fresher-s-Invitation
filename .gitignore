@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build and Production outputs
+dist/
+dist-ssr/
+*.local
+
+# Database & Confidential Data
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+data/
+*.db
+*.sqlite
+*.sqlite3
+*.csv
+*.xlsx
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.token
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
