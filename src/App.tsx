@@ -751,7 +751,10 @@ export function App() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#00072D] via-[#0A2472]/50 to-[#00072D] pointer-events-none" />
             <div className="relative z-10 px-6">
               <p className="font-semibold text-white text-center">College of Agriculture Information Technology • Saarthi 2026 Freshers Celebration</p>
-              <p className="mt-1 text-sky-300/80 text-center">Created by @rahulsalvi and Multimedia Team</p>
+              <p className="mt-1 text-sky-300/80 text-center">
+                Created by <strong className="font-bold text-white">@rahulsalvi</strong>{" "}
+                <span className="block sm:inline">and Multimedia Team</span>
+              </p>
               <div className="mt-3">
                 <button
                   onClick={() => setIsAdminOpen(true)}
