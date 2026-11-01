@@ -366,18 +366,19 @@ export function WorksWheel({
       </div>
 
       {/* Ring title and front-card title trade places across the transition.
-          Type is sized off the measured stage, not vh, so the wheel keeps its
-          proportions inside a card as well as at full bleed. */}
-      <div
-        ref={labelRef}
-        className="pointer-events-none absolute inset-0 grid place-items-center tracking-tight"
-        style={{ fontSize: metrics.title }}
-      >
-        {label}
-      </div>
+          Hidden on mobile so text in between never blocks the photos. */}
+      {label ? (
+        <div
+          ref={labelRef}
+          className="hidden md:grid pointer-events-none absolute inset-0 place-items-center tracking-tight"
+          style={{ fontSize: metrics.title }}
+        >
+          {label}
+        </div>
+      ) : null}
       <div
         ref={titleRef}
-        className="pointer-events-none absolute top-1/2 left-[8%] -translate-y-1/2 tracking-tight opacity-0"
+        className="hidden md:block pointer-events-none absolute top-1/2 left-[8%] -translate-y-1/2 tracking-tight opacity-0"
         style={{ fontSize: metrics.title }}
       >
         {items[active]?.title}

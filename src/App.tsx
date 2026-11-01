@@ -532,7 +532,6 @@ export function App() {
                 <div className="relative w-full h-[520px] sm:h-[600px] rounded-3xl border border-[#0A2472]/15 bg-white shadow-[0_20px_50px_rgba(0,7,45,0.08)] overflow-hidden">
                   <WorksWheel
                     items={WHEEL_ITEMS}
-                    label="Saarthi '26"
                     className="h-full w-full"
                   />
                 </div>
