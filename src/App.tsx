@@ -316,7 +316,7 @@ export function App() {
               SAARTHI <span className="font-light text-[#1A43BF]">2026</span>
             </span>
             <img 
-              src="ait-logo.gif" 
+              src="ait-logo.png" 
               alt="College of Agriculture Information Technology (AIT) Logo" 
               className="h-9 sm:h-11 w-auto object-contain hover:scale-105 transition-transform"
             />
