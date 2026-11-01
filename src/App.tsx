@@ -306,9 +306,21 @@ export function App() {
           <span className="text-[10px] uppercase tracking-[0.35em] font-bold text-[#1A43BF] text-center">
             College of Agriculture Information Technology
           </span>
-          <span className="font-cinzel text-2xl sm:text-3xl font-extrabold tracking-wider text-theme-gradient mt-4 text-center">
-            SAARTHI <span className="font-light text-[#1A43BF]">2026</span>
-          </span>
+          <div className="flex items-center justify-center gap-3 sm:gap-6 mt-3">
+            <img 
+              src="aaulogo.jpg" 
+              alt="Anand Agricultural University (AAU) Logo" 
+              className="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-full shadow-sm hover:scale-105 transition-transform"
+            />
+            <span className="font-cinzel text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider text-theme-gradient text-center">
+              SAARTHI <span className="font-light text-[#1A43BF]">2026</span>
+            </span>
+            <img 
+              src="ait-logo.gif" 
+              alt="College of Agriculture Information Technology (AIT) Logo" 
+              className="h-9 sm:h-11 w-auto object-contain hover:scale-105 transition-transform"
+            />
+          </div>
 
           <nav className="mt-3 flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-[11px] uppercase tracking-[0.2em] font-semibold text-[#475569] text-center">
             <a href="#welcome" className="transition-colors hover:text-[#1A43BF]">Welcome</a>
