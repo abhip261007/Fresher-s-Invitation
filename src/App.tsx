@@ -306,19 +306,19 @@ export function App() {
           <span className="text-[10px] uppercase tracking-[0.35em] font-bold text-[#1A43BF] text-center">
             College of Agriculture Information Technology
           </span>
-          <div className="flex items-center justify-center gap-3 sm:gap-6 mt-3">
+          <div className="flex items-center justify-center gap-4 sm:gap-8 mt-2 sm:mt-3">
             <img 
-              src="aaulogo.jpg" 
+              src="aaulogo.png" 
               alt="Anand Agricultural University (AAU) Logo" 
-              className="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-full shadow-sm hover:scale-105 transition-transform"
+              className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 object-contain hover:scale-105 transition-transform shrink-0 drop-shadow-sm"
             />
-            <span className="font-cinzel text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider text-theme-gradient text-center">
+            <span className="font-cinzel text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-wider text-theme-gradient text-center">
               SAARTHI <span className="font-light text-[#1A43BF]">2026</span>
             </span>
             <img 
               src="ait-logo.png" 
               alt="College of Agriculture Information Technology (AIT) Logo" 
-              className="h-9 sm:h-11 w-auto object-contain hover:scale-105 transition-transform"
+              className="h-11 sm:h-16 md:h-20 w-auto object-contain hover:scale-105 transition-transform shrink-0 drop-shadow-sm"
             />
           </div>
 
