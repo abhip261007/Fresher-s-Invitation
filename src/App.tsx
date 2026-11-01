@@ -712,14 +712,14 @@ export function App() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#00072D] via-[#0A2472]/50 to-[#00072D] pointer-events-none" />
             <div className="relative z-10 px-6">
               <p className="font-semibold text-white text-center">College of Agriculture Information Technology • Saarthi 2026 Freshers Celebration</p>
-              <p className="mt-1 text-sky-300/80 text-center">Crafted with care by the Senior Student Council</p>
+              <p className="mt-1 text-sky-300/80 text-center">Created by Multimedia Team</p>
               <div className="mt-3">
                 <button
                   onClick={() => setIsAdminOpen(true)}
                   className="inline-flex items-center gap-1.5 text-[11px] text-sky-300/80 hover:text-white transition-colors cursor-pointer"
                 >
                   <ShieldCheck className="h-3.5 w-3.5" />
-                  <span>Senior Council Access (SQLite Database Roster)</span>
+                  <span>Multimedia Team Access</span>
                 </button>
               </div>
             </div>

@@ -158,7 +158,7 @@ export function AdminModal({ isOpen, onClose, onDataChanged }: AdminModalProps) 
                 </span>
               </div>
               <p className="text-xs text-sky-200/80 mt-0.5">
-                Senior Council Administrative Database Viewer
+                Multimedia Team Administrative Database Viewer
               </p>
             </div>
           </div>
@@ -191,16 +191,16 @@ export function AdminModal({ isOpen, onClose, onDataChanged }: AdminModalProps) 
 
         {/* Body Content */}
         {!isAuthenticated ? (
-          /* Council Access Passcode Gate */
+          /* Multimedia Team Access Passcode Gate */
           <div className="p-8 sm:p-12 flex flex-col items-center text-center my-auto">
             <div className="h-16 w-16 rounded-2xl bg-[#0A2472]/10 border border-[#1A43BF]/20 flex items-center justify-center text-[#1A43BF] mb-4">
               <Lock className="h-8 w-8" />
             </div>
             <h4 className="font-cinzel text-2xl font-bold text-[#00072D]">
-              Senior Council Verification
+              Multimedia Team Verification
             </h4>
             <p className="text-xs text-[#475569] max-w-sm mt-2">
-              Access to view registered CAIT 1st year students and export database records is restricted to senior organizers.
+              Access to view registered CAIT 1st year students and export database records is restricted to the multimedia team.
             </p>
 
             <form onSubmit={handleUnlock} className="mt-6 w-full max-w-xs space-y-4">
