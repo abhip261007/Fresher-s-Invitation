@@ -464,7 +464,7 @@ export function App() {
                     </div>
 
                     <div className="flex flex-col items-center justify-center text-center p-3 rounded-2xl hover:bg-[#F8FAFC] transition-colors">
-                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">8:00 PM</span>
+                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">8:30 PM</span>
                       <p className="text-base font-semibold text-[#00072D] text-center">Garba</p>
                     </div>
                   </div>

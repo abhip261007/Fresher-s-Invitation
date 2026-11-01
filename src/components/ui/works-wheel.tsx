@@ -147,9 +147,16 @@ export function WorksWheel({
 
   const metrics = React.useMemo(() => {
     const { w, h } = stage;
-    const cardW = Math.min(h * CARD_H * CARD_RATIO, w * CARD_MAX_W);
+    const isMobile = w < 640;
+    const isTablet = w >= 640 && w < 1024;
+
+    // Mobile: scale card up to 72% width and 44% height so photos are clearly visible on phones
+    const cardMaxW = isMobile ? 0.72 : isTablet ? 0.48 : CARD_MAX_W;
+    const cardHFactor = isMobile ? 0.44 : CARD_H;
+
+    const cardW = Math.min(h * cardHFactor * CARD_RATIO, w * cardMaxW);
     const cardH = cardW / CARD_RATIO;
-    const drumR = cardH * DRUM;
+    const drumR = cardH * (isMobile ? 1.85 : DRUM);
     const ringR = cardH * RING_R;
     // Shrink the ring's cards until the circle reads as a closed loop rather
     // than beads on a wire, however many pieces the wheel is given.
@@ -162,9 +169,9 @@ export function WorksWheel({
       ringR,
       ringScale,
       drumR,
-      bow: cardH * BOW,
+      bow: cardH * (isMobile ? 0.85 : BOW),
       depth: cardH * LENS,
-      title: cardH * TITLE,
+      title: cardH * (isMobile ? 0.15 : TITLE),
       index: cardH * INDEX,
     };
   }, [stage, count]);
@@ -377,7 +384,7 @@ export function WorksWheel({
       </div>
 
       <ol
-        className="text-muted-foreground absolute top-[7.5%] right-[2.5%] text-right leading-[1.75] max-h-[85%] overflow-y-auto pr-1 pointer-events-auto select-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="hidden sm:block text-muted-foreground absolute top-[7.5%] right-[2.5%] text-right leading-[1.75] max-h-[85%] overflow-y-auto pr-1 pointer-events-auto select-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         style={{ fontSize: metrics.index }}
       >
         {items.map((item, i) => (
