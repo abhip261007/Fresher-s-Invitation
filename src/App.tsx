@@ -405,23 +405,23 @@ export function App() {
                   
                   <div className="mt-8 space-y-5 text-center">
                     <div className="flex flex-col items-center justify-center text-center p-3 rounded-2xl hover:bg-[#F8FAFC] transition-colors">
-                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">18:00</span>
-                      <p className="text-sm font-semibold text-[#00072D] text-center">Red carpet welcoming ceremony & batch badges</p>
+                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">1:30 PM</span>
+                      <p className="text-base font-semibold text-[#00072D] text-center">Program Start</p>
                     </div>
 
                     <div className="flex flex-col items-center justify-center text-center p-3 rounded-2xl hover:bg-[#F8FAFC] transition-colors">
-                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">19:15</span>
-                      <p className="text-sm font-semibold text-[#00072D] text-center">Senior cultural band showcase & acoustic jam</p>
+                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">4:00 PM</span>
+                      <p className="text-base font-semibold text-[#00072D] text-center">High Tea</p>
                     </div>
 
                     <div className="flex flex-col items-center justify-center text-center p-3 rounded-2xl hover:bg-[#F8FAFC] transition-colors">
-                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">20:30</span>
-                      <p className="text-sm font-semibold text-[#00072D] text-center">Mr. & Ms. CAIT Fresher 2026 runway competition</p>
+                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">7:00 PM</span>
+                      <p className="text-base font-semibold text-[#00072D] text-center">Dinner</p>
                     </div>
 
                     <div className="flex flex-col items-center justify-center text-center p-3 rounded-2xl hover:bg-[#F8FAFC] transition-colors">
-                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">21:45</span>
-                      <p className="text-sm font-semibold text-[#00072D] text-center">Live DJ electronic set & grand freshers dinner feast</p>
+                      <span className="rounded-full bg-[#F0F4FF] border border-[#1A43BF]/20 px-3.5 py-1 text-xs font-mono font-bold text-[#1A43BF] mb-2 text-center">8:00 PM</span>
+                      <p className="text-base font-semibold text-[#00072D] text-center">Garba</p>
                     </div>
                   </div>
                 </div>
