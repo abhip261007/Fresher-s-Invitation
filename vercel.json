@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/juniors/export",
+      "destination": "/api/export.js"
+    },
+    {
+      "source": "/api/juniors/:id",
+      "destination": "/api/juniors.js"
+    },
+    {
+      "source": "/api/juniors",
+      "destination": "/api/juniors.js"
+    },
+    {
+      "source": "/api/stats",
+      "destination": "/api/stats.js"
+    },
+    {
+      "source": "/api/register",
+      "destination": "/api/register.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -14,14 +14,9 @@ import {
   CheckCircle2,
   ShieldCheck,
 } from "lucide-react";
+import { getJuniors, deleteJunior, downloadJuniorsCSV, JuniorRecord } from "@/lib/cloudDb";
 
-export interface JuniorRecord {
-  id: number;
-  enrollment_no: string;
-  full_name: string;
-  dob: string;
-  created_at: string;
-}
+export type { JuniorRecord };
 
 interface AdminModalProps {
   isOpen: boolean;
@@ -39,22 +34,20 @@ export function AdminModal({ isOpen, onClose, onDataChanged }: AdminModalProps) 
   const [deleteConfirmId, setDeleteConfirmId] = useState<number | null>(null);
   const [actionMessage, setActionMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
-  // Fetch juniors list from SQLite backend
+  // Fetch juniors list from cloud and local database
   const fetchJuniors = async (query = "") => {
     setIsLoading(true);
     try {
-      const url = query ? `/api/juniors?q=${encodeURIComponent(query)}` : "/api/juniors";
-      const res = await fetch(url);
-      const data = await res.json();
-      if (data.success) {
-        setJuniors(data.juniors || []);
+      const res = await getJuniors(query);
+      if (res.success) {
+        setJuniors(res.juniors || []);
       } else {
-        setActionMessage({ type: "error", text: data.error || "Failed to load database records" });
+        setActionMessage({ type: "error", text: "Failed to load database records" });
       }
     } catch (err: any) {
       setActionMessage({
         type: "error",
-        text: "Could not connect to database backend. Ensure Vite dev server is running.",
+        text: "Could not connect to database backend.",
       });
     } finally {
       setIsLoading(false);
@@ -82,16 +75,15 @@ export function AdminModal({ isOpen, onClose, onDataChanged }: AdminModalProps) 
   // Delete junior record
   const handleDelete = async (id: number) => {
     try {
-      const res = await fetch(`/api/juniors/${id}`, { method: "DELETE" });
-      const data = await res.json();
-      if (data.success) {
+      const res = await deleteJunior(id);
+      if (res.success) {
         setJuniors((prev) => prev.filter((j) => j.id !== id));
         setDeleteConfirmId(null);
         setActionMessage({ type: "success", text: "Entry successfully removed from database." });
         setTimeout(() => setActionMessage(null), 3000);
         if (onDataChanged) onDataChanged();
       } else {
-        setActionMessage({ type: "error", text: data.error || "Failed to delete entry" });
+        setActionMessage({ type: "error", text: res.error || "Failed to delete entry" });
       }
     } catch (err) {
       setActionMessage({ type: "error", text: "Network error while deleting entry." });
@@ -99,8 +91,14 @@ export function AdminModal({ isOpen, onClose, onDataChanged }: AdminModalProps) 
   };
 
   // Trigger CSV Download
-  const handleExportCSV = () => {
-    window.open("/api/juniors/export", "_blank");
+  const handleExportCSV = async () => {
+    try {
+      await downloadJuniorsCSV();
+      setActionMessage({ type: "success", text: "CSV roster downloaded successfully!" });
+      setTimeout(() => setActionMessage(null), 3000);
+    } catch (err) {
+      window.open("/api/juniors/export", "_blank");
+    }
   };
 
   // Format Date of Birth nicely

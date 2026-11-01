@@ -84,6 +84,27 @@ export async function handleApiRequest(req, res, next) {
 
       const result = addJunior(enrollmentNo, fullName, dob);
 
+      if (result.success) {
+        // Sync to cloud database
+        fetch("https://api.restful-api.dev/objects/ff808181a09d98f701a198731b8a01cf")
+          .then((r) => r.json())
+          .then((doc) => {
+            const list = (doc.data && doc.data.juniors) || [];
+            if (!list.some((j) => j.enrollment_no === String(enrollmentNo).trim())) {
+              list.unshift(result.junior);
+              fetch("https://api.restful-api.dev/objects/ff808181a09d98f701a198731b8a01cf", {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  name: "Saarthi 2026 Juniors Database",
+                  data: { count: list.length, juniors: list },
+                }),
+              }).catch(() => {});
+            }
+          })
+          .catch(() => {});
+      }
+
       if (!result.success && result.duplicate) {
         return sendJson(res, 409, {
           success: false,
