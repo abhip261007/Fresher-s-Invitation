@@ -365,12 +365,11 @@ export function WorksWheel({
         </div>
       </div>
 
-      {/* Ring title and front-card title trade places across the transition.
-          Hidden on mobile so text in between never blocks the photos. */}
+      {/* Ring center label and front-card title */}
       {label ? (
         <div
           ref={labelRef}
-          className="hidden md:grid pointer-events-none absolute inset-0 place-items-center tracking-tight"
+          className="pointer-events-none absolute inset-0 grid place-items-center tracking-tight font-cinzel font-bold text-[#00072D]/90 select-none drop-shadow-sm"
           style={{ fontSize: metrics.title }}
         >
           {label}
@@ -378,7 +377,7 @@ export function WorksWheel({
       ) : null}
       <div
         ref={titleRef}
-        className="hidden md:block pointer-events-none absolute top-1/2 left-[8%] -translate-y-1/2 tracking-tight opacity-0"
+        className="hidden md:block pointer-events-none absolute top-1/2 left-[8%] -translate-y-1/2 tracking-tight opacity-0 font-cinzel font-bold text-[#00072D]/90 select-none drop-shadow-sm"
         style={{ fontSize: metrics.title }}
       >
         {items[active]?.title}
