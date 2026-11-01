@@ -19,14 +19,13 @@ import confetti from "canvas-confetti";
 import { AdminModal } from "@/components/AdminModal";
 import { PosterReveal } from "@/components/PosterReveal";
 
-// Memory Slides for the Glide.js Center-Focus Peeking Carousel (All 30 Freshers Photos)
+// Memory Slides for the Glide.js Center-Focus Peeking Carousel (Curated Freshers Photos - No Captions)
 const MEMORY_SLIDES: GlideSlideItem[] = [
   {
     id: 1,
     src: "assets/freshers/photo-01.jpeg",
     alt: "CAIT freshers induction and celebration moments",
     title: "The Induction Rite",
-    caption: "The exact moment seniors pinned our fresher badges at the gates—nervous freshmen turning into lifelong comrades.",
     tag: "Batch Welcome"
   },
   {
@@ -34,7 +33,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-02.jpeg",
     alt: "Celebration and festive vibes",
     title: "Festive Aura",
-    caption: "Electrifying smiles and celebration lighting up the college auditorium as the journey officially commences.",
     tag: "Celebration"
   },
   {
@@ -42,7 +40,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-03.jpeg",
     alt: "Group smiles and friendship",
     title: "Unscripted Joy",
-    caption: "Polaroids, inside jokes, and realizing that college is where you discover people who resonate with your frequency.",
     tag: "Keepsakes"
   },
   {
@@ -50,7 +47,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-04.jpeg",
     alt: "Auditorium showcase and speeches",
     title: "Auditorium Glory",
-    caption: "The solemn and celebratory gathering of faculty, seniors, and newly admitted scholars.",
     tag: "Ceremony"
   },
   {
@@ -58,7 +54,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-05.jpeg",
     alt: "Stage showcase and live performances",
     title: "Centerstage Spotlight",
-    caption: "Captivating live acoustic sets, vocal showcases, and theatrical skits prepared with love.",
     tag: "Live Showcase"
   },
   {
@@ -66,7 +61,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-06.jpeg",
     alt: "Senior and junior camaraderie",
     title: "Bonds of Brotherhood",
-    caption: "A guiding hand from seniors who were once standing in the exact same shoes.",
     tag: "Camaraderie"
   },
   {
@@ -74,7 +68,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-07.jpeg",
     alt: "Fresher students cheering and celebrating",
     title: "Crowd Euphoria",
-    caption: "When the energy peaked and cheers echoed across the halls in an unforgettable unison.",
     tag: "Vibes"
   },
   {
@@ -82,7 +75,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-08.jpeg",
     alt: "Traditional attire and elegance",
     title: "Tradition & Grace",
-    caption: "Honoring our roots and timeless culture with vibrant ethnic attire and traditional elegance.",
     tag: "Heritage"
   },
   {
@@ -90,7 +82,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-09.jpeg",
     alt: "Runway moments and smiles",
     title: "Runway Radiance",
-    caption: "The poise and charisma of freshers walking the spotlight runway with pride.",
     tag: "Glamour"
   },
   {
@@ -98,7 +89,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-10.jpeg",
     alt: "Candid laughter among peers",
     title: "Golden Smiles",
-    caption: "Unfiltered smiles that mark the beginning of late-night study sessions and canteen memories.",
     tag: "Memories"
   },
   {
@@ -106,7 +96,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-11.jpeg",
     alt: "Stage backdrop and evening lights",
     title: "Evening Radiance",
-    caption: "Illuminated stage aesthetics framing unforgettable speeches, honors, and announcements.",
     tag: "Aesthetics"
   },
   {
@@ -114,7 +103,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-12.jpeg",
     alt: "Cultural jam and live beats",
     title: "Rhythm & Resonance",
-    caption: "Soulful acoustic guitar jams and melodic vocals setting a warm, heartfelt rhythm.",
     tag: "Acoustics"
   },
   {
@@ -122,7 +110,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-13.jpeg",
     alt: "Garba and folk celebration",
     title: "Garba Raas Energy",
-    caption: "Synchronized steps, swirling traditional colors, and the irresistible beat of dhol beats.",
     tag: "Garba Night"
   },
   {
@@ -130,7 +117,6 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-14.jpeg",
     alt: "Faculty and student felicitation",
     title: "Honoring Excellence",
-    caption: "Words of wisdom from mentors inspiring our newest batch to reach stellar heights in IT.",
     tag: "Inspiration"
   },
   {
@@ -138,148 +124,12 @@ const MEMORY_SLIDES: GlideSlideItem[] = [
     src: "assets/freshers/photo-15.jpeg",
     alt: "Batch unity and group portraits",
     title: "United As One",
-    caption: "Different cities, diverse backgrounds, now woven together into the proud CAIT family.",
     tag: "Unity"
-  },
-  {
-    id: 16,
-    src: "assets/freshers/photo-16.jpeg",
-    alt: "Lively hall ambiance",
-    title: "Campus Atmosphere",
-    caption: "A celebration of youthful spirit, innovation, and technological passion.",
-    tag: "Campus Life"
-  },
-  {
-    id: 17,
-    src: "assets/freshers/photo-17.jpeg",
-    alt: "Dynamic performances",
-    title: "Theatrical Harmony",
-    caption: "Skits depicting hostel life, code bugs, and memories that had the audience in splits.",
-    tag: "Performances"
-  },
-  {
-    id: 18,
-    src: "assets/freshers/photo-18.jpeg",
-    alt: "Award ceremonies and recognition",
-    title: "Spotlight Accolades",
-    caption: "Awarding the brightest sparks and standout personalities of the induction.",
-    tag: "Accolades"
-  },
-  {
-    id: 19,
-    src: "assets/freshers/photo-19.jpeg",
-    alt: "Candid group keepsake",
-    title: "Unforgettable Bonds",
-    caption: "Friendships forged on day one that will outlast college and shape our futures.",
-    tag: "Friendship"
-  },
-  {
-    id: 20,
-    src: "assets/freshers/photo-20.jpeg",
-    alt: "Evening festivities and dinner feast",
-    title: "Festive Banquet",
-    caption: "Savoring hot delicacies, high tea, and dinner while swapping stories of home.",
-    tag: "Banquet"
-  },
-  {
-    id: 21,
-    src: "assets/freshers/photo-21.jpeg",
-    alt: "Vibrant cultural dance showcases",
-    title: "Choreography Magic",
-    caption: "High-octane fusion dance choreography that electrified the auditorium.",
-    tag: "Dance Floor"
-  },
-  {
-    id: 22,
-    src: "assets/freshers/photo-22.jpeg",
-    alt: "Warm senior welcome address",
-    title: "The Guiding Beacon",
-    caption: "Heartfelt advice on navigating assignments, exams, and making the best of college life.",
-    tag: "Mentorship"
-  },
-  {
-    id: 23,
-    src: "assets/freshers/photo-23.jpeg",
-    alt: "Festive lighting and joyful faces",
-    title: "Sparkling Memories",
-    caption: "Golden memories captured in vivid detail to look back upon at graduation.",
-    tag: "Milestones"
-  },
-  {
-    id: 24,
-    src: "assets/freshers/photo-24.jpeg",
-    alt: "Musical showcases and beats",
-    title: "Melodic Harmonies",
-    caption: "A symphony of voices singing in unison to anthems of freedom and youth.",
-    tag: "Music"
-  },
-  {
-    id: 25,
-    src: "assets/freshers/photo-25.jpeg",
-    alt: "Joyful celebration moments",
-    title: "Pure Euphoria",
-    caption: "No hesitation, no barriers—just sheer unadulterated happiness of being here.",
-    tag: "Joy"
-  },
-  {
-    id: 26,
-    src: "assets/freshers/photo-26.jpeg",
-    alt: "Classmate camaraderie",
-    title: "Comrades for Life",
-    caption: "From classroom benches to campus grounds, brothers and sisters in code.",
-    tag: "Batchmates"
-  },
-  {
-    id: 27,
-    src: "assets/freshers/photo-27.jpeg",
-    alt: "Auditorium perspective and grandeur",
-    title: "Grand Horizon",
-    caption: "The start of an adventurous four-year voyage into Agriculture and Information Technology.",
-    tag: "Voyage"
-  },
-  {
-    id: 28,
-    src: "assets/freshers/photo-28.jpeg",
-    alt: "Spirited cheers and smiles",
-    title: "Spirited Cheers",
-    caption: "Lifting the roof with deafening cheers as the party hits its grand high point.",
-    tag: "Cheers"
-  },
-  {
-    id: 29,
-    src: "assets/freshers/photo-29.jpeg",
-    alt: "Celebration culmination",
-    title: "Grand Crescendo",
-    caption: "The culmination of tireless efforts by the multimedia team and organizers.",
-    tag: "Grand Finale"
-  },
-  {
-    id: 30,
-    src: "assets/freshers/photo-30.jpeg",
-    alt: "Everlasting freshers legacy",
-    title: "Legacy Eternal",
-    caption: "Today you are freshers; tomorrow you will be the seniors welcoming the world.",
-    tag: "Legacy"
   }
 ];
 
-// Items for the 3D Works Wheel drum below the carousel (All 30 Freshers Photos)
+// Items for the 3D Works Wheel drum below the carousel (Unique Freshers Photos - No Duplicates)
 const WHEEL_ITEMS: WorksWheelItem[] = [
-  { title: "Induction Rite", image: "assets/freshers/photo-01.jpeg" },
-  { title: "Festive Aura", image: "assets/freshers/photo-02.jpeg" },
-  { title: "Unscripted Joy", image: "assets/freshers/photo-03.jpeg" },
-  { title: "Auditorium Glory", image: "assets/freshers/photo-04.jpeg" },
-  { title: "Centerstage", image: "assets/freshers/photo-05.jpeg" },
-  { title: "Senior Camaraderie", image: "assets/freshers/photo-06.jpeg" },
-  { title: "Crowd Euphoria", image: "assets/freshers/photo-07.jpeg" },
-  { title: "Tradition & Grace", image: "assets/freshers/photo-08.jpeg" },
-  { title: "Runway Radiance", image: "assets/freshers/photo-09.jpeg" },
-  { title: "Golden Smiles", image: "assets/freshers/photo-10.jpeg" },
-  { title: "Evening Radiance", image: "assets/freshers/photo-11.jpeg" },
-  { title: "Rhythm & Resonance", image: "assets/freshers/photo-12.jpeg" },
-  { title: "Garba Raas", image: "assets/freshers/photo-13.jpeg" },
-  { title: "Honoring Mentors", image: "assets/freshers/photo-14.jpeg" },
-  { title: "United As One", image: "assets/freshers/photo-15.jpeg" },
   { title: "Campus Atmosphere", image: "assets/freshers/photo-16.jpeg" },
   { title: "Theatrical Skits", image: "assets/freshers/photo-17.jpeg" },
   { title: "Accolades", image: "assets/freshers/photo-18.jpeg" },
@@ -289,7 +139,6 @@ const WHEEL_ITEMS: WorksWheelItem[] = [
   { title: "Guiding Beacon", image: "assets/freshers/photo-22.jpeg" },
   { title: "Sparkling Memories", image: "assets/freshers/photo-23.jpeg" },
   { title: "Melodic Beats", image: "assets/freshers/photo-24.jpeg" },
-  { title: "Pure Euphoria", image: "assets/freshers/photo-25.jpeg" },
   { title: "Comrades in Code", image: "assets/freshers/photo-26.jpeg" },
   { title: "Grand Horizon", image: "assets/freshers/photo-27.jpeg" },
   { title: "Spirited Cheers", image: "assets/freshers/photo-28.jpeg" },

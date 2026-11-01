@@ -7,9 +7,9 @@ export interface GlideSlideItem {
   id: string | number;
   src: string;
   alt: string;
-  title: string;
-  caption: string;
-  tag: string;
+  title?: string;
+  caption?: string;
+  tag?: string;
 }
 
 interface GlideCarouselProps {
@@ -117,14 +117,13 @@ export function GlideCarousel({ slides, onSelectSlide }: GlideCarouselProps) {
                       </div>
 
                       {/* Content Overlay */}
-                      <div className="absolute bottom-4 left-4 right-4 text-center text-white">
-                        <h4 className="font-cinzel text-lg sm:text-xl font-bold tracking-wide text-white drop-shadow-sm">
-                          {slide.title}
-                        </h4>
-                        <p className="mt-1 line-clamp-2 text-xs text-[#93C5FD] max-w-sm mx-auto">
-                          {slide.caption}
-                        </p>
-                      </div>
+                      {slide.title && (
+                        <div className="absolute bottom-4 left-4 right-4 text-center text-white">
+                          <h4 className="font-cinzel text-lg sm:text-xl font-bold tracking-wide text-white drop-shadow-sm">
+                            {slide.title}
+                          </h4>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </li>
